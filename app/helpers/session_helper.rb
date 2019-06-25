@@ -11,4 +11,8 @@ module SessionHelper
   def sign_out
     session[:user_id] = @current_user = nil
   end
+
+  def signed_in?
+    current_user
+  end
 end

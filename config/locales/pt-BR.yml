@@ -18,12 +18,14 @@ pt-BR:
   users:
     new:
       title: Novo Usuario
-    show:
+    edit:
       title: Confira Seus Dados
   sessions:
     new:
       title: Login
       button_login_label: Entrar
+    destroy:
+      exit: Sair
   date:
     abbr_day_names:
     - Dom
