@@ -1,4 +1,5 @@
 pt-BR:
+  brand_name: CronME
   activerecord:
     errors:
       messages:
