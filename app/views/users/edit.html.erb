@@ -1,0 +1,36 @@
+<div class='container-fluid'>
+  <div class='row'>
+    <div class='col'></div>
+    <div class='col-2'>
+      <h2><%= t('.title') %></h2>
+      <%= form_with model: current_user, class: 'form-horizontal', local: true do |f| %>
+        <div class='form-group'>
+          <%= f.label :email %>
+          <div class=''>
+            <%= f.email_field :email %>
+          </div>
+        </div>
+        <div class='form-group'>
+          <%= f.label :name %>
+          <div class=''>
+            <%= f.text_field :name %>
+          </div>
+        </div>
+        <div class='form-group'>
+          <div class=''>
+            <%= f.radio_button :active, true %>
+            <%= label_tag 'Ativo' %>
+            <%= f.radio_button :active, false %>
+            <%= label_tag 'Inativo' %>
+          </div>
+        </div>
+        <div class='form-group'>
+          <div class=''>
+            <%= f.submit class: 'btn btn-success' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class='col'></div>
+  </div>
+</div>
