@@ -3,23 +3,30 @@
     <div class='col'></div>
     <div class='col-4'>
       <h2><%= t('.title') %></h2>
-      <%= form_with model: @user, class: 'form-horizontal', local: true do |f| %>
+      <%= form_with model: current_user, class: 'form-horizontal', local: true do |f| %>
         <div class='form-group'>
           <%= f.label :email %>
           <div class=''>
-            <%= f.object.email %>
+            <%= f.email_field :email %>
           </div>
         </div>
         <div class='form-group'>
           <%= f.label :name %>
           <div class=''>
-            <%= f.object.name %>
+            <%= f.text_field :name %>
           </div>
         </div>
         <div class='form-group'>
-          <%= f.label :active %>
           <div class=''>
-            <%= t(f.object.active.to_s) %>
+            <%= f.radio_button :active, true %>
+            <%= label_tag 'Ativo' %>
+            <%= f.radio_button :active, false %>
+            <%= label_tag 'Inativo' %>
+          </div>
+        </div>
+        <div class='form-group'>
+          <div class=''>
+            <%= f.submit class: 'btn btn-success' %>
           </div>
         </div>
       <% end %>
