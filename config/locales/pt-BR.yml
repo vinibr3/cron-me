@@ -13,9 +13,17 @@ pt-BR:
         email: Email
         password: Senha
         password_confirmation: Confirmacao de Senha
+        name: Nome
+        active: Ativo
   users:
     new:
       title: Novo Usuario
+    show:
+      title: Confira Seus Dados
+  sessions:
+    new:
+      title: Login
+      button_login_label: Entrar
   date:
     abbr_day_names:
     - Dom
