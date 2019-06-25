@@ -3,7 +3,7 @@
     <div class='col'></div>
     <div class='col-4'>
       <h2><%= t('.title') %></h2>
-      <%= form_with model: current_user, class: 'form-horizontal', local: true , url: sessions_path do |f| %>
+      <%= form_with model: @user, class: 'form-horizontal', local: true , url: sessions_path do |f| %>
         <div class='form-group'>
           <%= f.label :email %>
           <div class=''>
@@ -11,7 +11,7 @@
           </div>
         </div>
         <div class='form-group'>
-          <%= f.object.label :password %>
+          <%= f.label :password %>
           <div class=''>
             <%= f.password_field :password %>
           </div>
