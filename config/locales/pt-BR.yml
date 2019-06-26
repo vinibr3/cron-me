@@ -9,7 +9,9 @@ pt-BR:
           has_many: Não é possível excluir o registro pois existem %{record} dependentes
     models:
       user: Usuario
-      board: Painel
+      board:
+        one: Painel
+        other: Paineis
     attributes:
       user:
         email: Email
@@ -23,6 +25,8 @@ pt-BR:
         priority: Prioridade De Visualização
         active: Ativo
         color: Cor
+        header_background_color: Cor de Fundo do Cabeçalho
+        header_text_color: Cor do Texto
   users:
     new:
       title: Novo Usuario

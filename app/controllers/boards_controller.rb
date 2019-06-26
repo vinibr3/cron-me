@@ -1,4 +1,8 @@
 class BoardsController < ApplicationController
+  def index
+    @boards = current_user.boards.active.by_priority
+  end
+
   def new
     @board = Board.new
   end
@@ -15,6 +19,7 @@ class BoardsController < ApplicationController
   private
 
   def valid_params
-    params.require(:board).permit(:title, :description, :priority, :color)
+    params.require(:board).permit(:title, :description, :priority,
+                                  :header_background_color, :header_text_color)
   end
 end

@@ -1,7 +1,7 @@
 class Board < ApplicationRecord
   belongs_to :user
 
-  store :style, accessors: [:color]
+  store :style, accessors: [:header_background_color, :header_text_color]
 
   validates :title, presence: true,
                     length: { maximum: 100 },
@@ -9,4 +9,7 @@ class Board < ApplicationRecord
 
   validates :priority, presence: true,
                        numericality: { only_integer: true }
+
+  scope :active, -> { where(active: true) }
+  scope :by_priority, -> { order('priority DESC') }
 end
