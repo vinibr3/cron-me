@@ -2,6 +2,8 @@ class User < ApplicationRecord
   attr_accessor :password_confirmation
   has_secure_password
 
+  has_many :boards
+
   validates :email, presence: true,
                     uniqueness: { case_sensitive: false }
 

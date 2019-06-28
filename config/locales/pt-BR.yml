@@ -9,6 +9,9 @@ pt-BR:
           has_many: Não é possível excluir o registro pois existem %{record} dependentes
     models:
       user: Usuario
+      board:
+        one: Painel
+        other: Paineis
     attributes:
       user:
         email: Email
@@ -16,6 +19,14 @@ pt-BR:
         password_confirmation: Confirmacao de Senha
         name: Nome
         active: Ativo
+      board:
+        title: Título
+        description: Descrição
+        priority: Prioridade De Visualização
+        active: Ativo
+        color: Cor
+        header_background_color: Cor de Fundo do Cabeçalho
+        header_text_color: Cor do Texto
   users:
     new:
       title: Novo Usuario
@@ -27,6 +38,9 @@ pt-BR:
       button_login_label: Entrar
     destroy:
       exit: Sair
+  boards:
+    new:
+      title: Novo Painel
   date:
     abbr_day_names:
     - Dom
