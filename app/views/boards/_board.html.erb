@@ -3,7 +3,8 @@
     <div class="card-header" style='background-color:<%= board.header_background_color %>;color:<%= board.header_text_color %>;'>
       <%= board.title %>
       <%= link_to t('posts.new.title'),
-                  new_board_post_path(board) %>
+                  new_board_post_path(board),
+                  class: 'float-right' %>
     </div>
     <div class="card-body">
       <%= link_to t('boards.index.edit'),
