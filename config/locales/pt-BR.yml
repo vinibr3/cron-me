@@ -49,6 +49,7 @@ pt-BR:
     index:
       edit: Editar
       destroy: Deletar
+      new: Novo Painel
   posts:
     edit: Editar
     new:
