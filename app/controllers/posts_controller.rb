@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :find_board
+  before_action :find_post_from_board, only: [:edit, :update, :destroy]
 
   def new
     @board = find_board
@@ -16,19 +17,22 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = @board.posts
-                  .where(id: params[:id])
-                  .first
+    @post = find_post_from_board
   end
 
   def update
-    @post = @board.posts
-                  .where(id: params[:id])
-                  .first
+    @post = find_post_from_board
     if @post.update_attributes(valid_params)
       redirect_to boards_path
     else
       render :edit
+    end
+  end
+
+  def destroy
+    @post = find_post_from_board
+    respond_to do |format|
+      format.js { @post.destroy }
     end
   end
 
@@ -40,5 +44,11 @@ class PostsController < ApplicationController
 
   def valid_params
     params.require(:post).permit(:title, :description, :conclusion_deadline, :conclusion_date)
+  end
+
+  def find_post_from_board
+    @board.posts
+          .where(id: params[:id])
+          .first
   end
 end

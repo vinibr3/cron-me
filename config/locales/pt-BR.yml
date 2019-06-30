@@ -47,9 +47,11 @@ pt-BR:
     new:
       title: Novo Painel
   posts:
-    edit: Editar Post
+    edit: Editar
     new:
       title: Novo Post
+    destroy: Deletar
+    confirm_destroy: Tem certeza que quer deletar?
   date:
     abbr_day_names:
     - Dom
