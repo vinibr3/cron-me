@@ -1,4 +1,4 @@
-<div class='col-3'>
+<div class='col-3' id='board-<%= board.id %>' >
   <div class="card">
     <div class="card-header" style='background-color:<%= board.header_background_color %>;color:<%= board.header_text_color %>;'>
       <%= board.title %>
@@ -8,6 +8,12 @@
     <div class="card-body">
       <%= link_to t('boards.index.edit'),
                   edit_board_path(board) %>
+      <%= link_to t('boards.index.destroy'),
+                  board_path(board),
+                  method: :delete,
+                  remote: true,
+                  data: { confirm: t('posts.confirm_destroy') },
+                  class: 'float-right' %>
       <p class="card-text"><%= board.description %></p>
     </div>
     <div class='card-body'>

@@ -1,5 +1,5 @@
 class BoardsController < ApplicationController
-  before_action :find_board, only: [:edit, :update]
+  before_action :find_board, only: [:edit, :update, :destroy]
 
   def index
     @boards = current_user.boards
@@ -29,6 +29,12 @@ class BoardsController < ApplicationController
       redirect_to root_path
     else
       render :edit
+    end
+  end
+
+  def destroy
+    respond_to do |format|
+      format.js { @board.destroy }
     end
   end
 

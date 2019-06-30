@@ -48,6 +48,7 @@ pt-BR:
       title: Novo Painel
     index:
       edit: Editar
+      destroy: Deletar
   posts:
     edit: Editar
     new:
