@@ -1,5 +1,8 @@
 <div class="card border-secondary mb-3" style="max-width: 18rem;">
-  <div class="card-header"><%= post.title %></div>
+  <div class="card-header">
+    <%= post.title %>
+    <%= link_to t('posts.edit'), edit_board_post_path(post.board, post) %>
+  </div>
   <div class="card-body text-secondary">
     <h5 class="card-title"><%= post.conclusion_deadline.strftime("%d/%m/%Y %H:%M") %></h5>
     <p class="card-text"><%= post.description %></p>

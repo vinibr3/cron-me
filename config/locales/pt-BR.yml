@@ -47,6 +47,7 @@ pt-BR:
     new:
       title: Novo Painel
   posts:
+    edit: Editar Post
     new:
       title: Novo Post
   date:
