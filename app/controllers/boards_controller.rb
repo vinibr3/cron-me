@@ -1,4 +1,6 @@
 class BoardsController < ApplicationController
+  before_action :find_board, only: [:edit, :update]
+
   def index
     @boards = current_user.boards
                           .active
@@ -19,10 +21,26 @@ class BoardsController < ApplicationController
     end
   end
 
+  def edit;end
+
+  def update
+    @board = Board.find(params[:id])
+    if @board.update_attributes(valid_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
   private
 
   def valid_params
     params.require(:board).permit(:title, :description, :priority,
                                   :header_background_color, :header_text_color)
   end
+
+  def find_board
+    @board = Board.find(params[:id])
+  end
+
 end
