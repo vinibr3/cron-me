@@ -2,6 +2,8 @@
   <div class="card">
     <div class="card-header" style='background-color:<%= board.header_background_color %>;color:<%= board.header_text_color %>;'>
       <%= board.title %>
+      <span class='btn pull-right'> <%= link_to t('posts.new.title'),
+                                                new_board_post_path(board) %> </span>
     </div>
     <div class="card-body">
       <p class="card-text"><%= board.description %></p>
