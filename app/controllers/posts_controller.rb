@@ -2,7 +2,17 @@ class PostsController < ApplicationController
   before_action :find_board_to_create_post, only: [:new, :create]
 
   def new
-    @post = find_board_to_create_post.posts.new
+    @board = find_board_to_create_post
+    @post = @board.posts.new
+  end
+
+  def create
+    @post = find_board_to_create_post.posts.new(valid_params)
+    if @post.save
+      redirect_to boards_path
+    else
+      render :new
+    end
   end
 
   private
@@ -12,6 +22,6 @@ class PostsController < ApplicationController
   end
 
   def valid_params
-    params.require(:post).permit(:title, :description, :conslusion_deadline)
+    params.require(:post).permit(:title, :description, :conclusion_deadline)
   end
 end

@@ -4,6 +4,6 @@ FactoryBot.define do
     description { Faker::Lorem.paragraph }
     conclusion_deadline { Faker::Date.forward(30) }
     conclusion_date { Faker::Date.between(Time.current, conclusion_deadline) }
-    post { association(:board) }
+    board { association(:board) }
   end
 end
