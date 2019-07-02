@@ -35,12 +35,14 @@ pt-BR:
   users:
     new:
       title: Novo Usuario
+      session: Logar
     edit:
       title: Confira Seus Dados
   sessions:
     new:
       title: Login
       button_login_label: Entrar
+      user: Novo Usuario
     destroy:
       exit: Sair
   boards:

@@ -17,7 +17,10 @@
           </div>
         </div>
         <div class='form-group'>
-           <%= f.submit t('.button_login_label'), class: 'btn btn-success' %>
+           <%= f.submit t('.button_login_label'), { class: 'btn btn-success' } %>
+        </div>
+        <div class='form-group'>
+           <%= link_to t('sessions.new.user'), new_user_path %>
         </div>
       <% end %>
     </div>
