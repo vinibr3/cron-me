@@ -46,6 +46,10 @@ pt-BR:
   boards:
     new:
       title: Novo Painel
+    index:
+      edit: Editar
+      destroy: Deletar
+      new: Novo Painel
   posts:
     edit: Editar
     new:
