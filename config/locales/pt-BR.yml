@@ -51,7 +51,8 @@ pt-BR:
       destroy: Deletar
       new: Novo Painel
   posts:
-    edit: Editar
+    edit:
+      title: Editar Post
     new:
       title: Novo Post
     destroy: Deletar

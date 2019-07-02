@@ -1,0 +1,9 @@
+<ul style='list-style: none;'>
+  <% post.attachments.each do |attachment| %>
+    <li>
+      <%= link_to url_for(attachment), target: '_blank' do %>
+        <%= image_tag attachment.variant(resize: size) %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
