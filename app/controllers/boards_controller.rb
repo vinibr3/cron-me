@@ -1,7 +1,9 @@
 class BoardsController < ApplicationController
+  before_action :require_login
   before_action :find_board, only: [:edit, :update, :destroy]
 
   def index
+    redirect_to new_session_path and return unless signed_in?
     @boards = current_user.boards
                           .active
                           .by_priority
