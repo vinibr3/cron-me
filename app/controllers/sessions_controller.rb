@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+    redirect_to boards_path and return if signed_in?
     @user = User.new
   end
 
