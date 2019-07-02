@@ -5,6 +5,12 @@
       <h2><%= t('.title') %></h2>
       <%= form_with model: current_user, class: 'form-horizontal', local: true do |f| %>
         <div class='form-group'>
+          <%= render partial: 'avatar', locals: { size: '100x100' } if signed_in? %>
+        </div>
+        <div class='form-group'>
+          <%= f.file_field :avatar %>
+        </div>
+        <div class='form-group'>
           <%= f.label :email %>
           <div class=''>
             <%= f.email_field :email %>

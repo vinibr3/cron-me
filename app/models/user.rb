@@ -2,6 +2,8 @@ class User < ApplicationRecord
   attr_accessor :password_confirmation
   has_secure_password
 
+  has_one_attached :avatar
+
   has_many :boards
   has_many :posts, through: :boards
 
