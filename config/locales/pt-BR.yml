@@ -27,6 +27,11 @@ pt-BR:
         color: Cor
         header_background_color: Cor de Fundo do Cabeçalho
         header_text_color: Cor do Texto
+      post:
+        title: Titulo
+        description: Descricao
+        conslusion_deadline: Data Para Conclusao
+        conslusion_date: Data de Conclusao
   users:
     new:
       title: Novo Usuario
@@ -41,6 +46,12 @@ pt-BR:
   boards:
     new:
       title: Novo Painel
+  posts:
+    edit: Editar
+    new:
+      title: Novo Post
+    destroy: Deletar
+    confirm_destroy: Tem certeza que quer deletar?
   date:
     abbr_day_names:
     - Dom

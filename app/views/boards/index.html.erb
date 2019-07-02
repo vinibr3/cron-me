@@ -1,5 +1,9 @@
 <div class='container-fluid'>
-  <div class='row'>
-    <%= render @boards %>
-  </div>
+  <% @boards.in_groups_of(3).each do |board_group|  %>
+    <div class="row">
+      <% board_group.compact.each do |board|  %>
+        <%= render board %>
+      <% end %>
+    </div>
+  <% end %>
 </div>

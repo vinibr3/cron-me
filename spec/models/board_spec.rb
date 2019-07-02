@@ -6,4 +6,5 @@ RSpec.describe Board, type: :model do
   it { is_expected.to validate_numericality_of(:priority).only_integer }
   it { is_expected.to belong_to(:user) }
   it { is_expected.to validate_uniqueness_of(:title).case_insensitive.scoped_to(:user_id) }
+  it { is_expected.to have_many(:posts) }
 end

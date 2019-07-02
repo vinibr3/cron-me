@@ -1,5 +1,6 @@
 class Board < ApplicationRecord
   belongs_to :user
+  has_many :posts, dependent: :destroy
 
   store :style, accessors: [:header_background_color, :header_text_color]
 

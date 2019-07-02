@@ -1,6 +1,9 @@
 class BoardsController < ApplicationController
   def index
-    @boards = current_user.boards.active.by_priority
+    @boards = current_user.boards
+                          .active
+                          .by_priority
+                          .includes(:posts)
   end
 
   def new
