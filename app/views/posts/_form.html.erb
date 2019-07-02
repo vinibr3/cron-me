@@ -17,6 +17,14 @@
       <%= f.date_field :conclusion_deadline %>
     </div>
   </div>
+  <% if !f.object.new_record? %>
+    <div class='form-group'>
+      <%= f.label :board %>
+      <div class=''>
+        <%= f.select :board_id, Board.all.map { |e| [e.title.to_s.titleize, e.id] } %>
+      </div>
+    </div>
+  <% end %>
   <div class='form-group'>
     <div class=''>
       <%= f.submit class: 'btn btn-success' %>

@@ -32,6 +32,7 @@ pt-BR:
         description: Descricao
         conslusion_deadline: Data Para Conclusao
         conslusion_date: Data de Conclusao
+        board: Painel
   users:
     new:
       title: Novo Usuario

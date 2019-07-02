@@ -43,7 +43,7 @@ class PostsController < ApplicationController
   end
 
   def valid_params
-    params.require(:post).permit(:title, :description, :conclusion_deadline, :conclusion_date)
+    params.require(:post).permit(:title, :description, :conclusion_deadline, :conclusion_date, :board_id)
   end
 
   def find_post_from_board
