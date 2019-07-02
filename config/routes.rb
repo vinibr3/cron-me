@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/', to: 'boards#index'
   scope "/:locale" do
     resources :users, only: [:new, :create, :edit, :update]
     resources :sessions, only: [:new, :create, :destroy]
