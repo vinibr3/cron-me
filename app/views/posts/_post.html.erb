@@ -17,7 +17,7 @@
     <div>
       <%= render partial: 'posts/attachments', locals: { post: post, size: '100x100' } %>
     </div>
-    <%= render partial: 'post_labels/index', locals: { post_labels: post.label_posts } %>
+    <%= render partial: 'post_labels/index', locals: { post: post } %>
     <p class="card-text float-right"><%= post.conclusion_deadline.strftime("%d/%m/%Y %H:%M") %></p>
   </div>
 </div>

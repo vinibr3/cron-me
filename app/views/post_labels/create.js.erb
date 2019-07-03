@@ -1,1 +1,4 @@
-$("ul#post-labels").append("<%= j render partial: 'post_labels/post_label', locals: { post_label: @post_label } %>");
+<% if @post_label.persisted? %>
+  $("ul#post-<%= @post_label.post_id %>")
+    .append("<%= j render partial: 'post_labels/post_label', locals: { post_label: @post_label } %>");
+<% end %>

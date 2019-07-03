@@ -1,13 +1,5 @@
-<ul id='post-labels' style='list-style: none;'>
-  <% post_labels.each do |post_label| %>
-    <li id='post-label-<%= post_label.id %>'>
-      <div class="alert text-center float-right" role="alert" style='background-color:<%= post_label.label.background_color %>;'>
-        <%= post_label.label.title %>
-        <%= link_to 'x', post_label_path(post_label.post, post_label.label),
-                         method: :delete,
-                         remote: true,
-                         class: 'float-right',
-                         data: { confirm: t('posts.confirm_destroy') } %>
-    </li>
+<ul id='post-<%= post.id %>' style='list-style: none;'>
+  <% post.label_posts.each do |post_label| %>
+    <%= render partial: 'post_labels/post_label', locals: { post_label: post_label } %>
   <% end %>
 </ul>
