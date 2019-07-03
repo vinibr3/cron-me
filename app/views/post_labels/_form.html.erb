@@ -1,0 +1,15 @@
+<div class="btn-group btn-group-sm" role="group">
+  <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Labels
+  </button>
+  <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+    <% current_user.labels.each do |label| %>
+      <%= link_to label.title,
+                  post_labels_path(post, label_id: label.id),
+                  method: :post,
+                  remote: true,
+                  class: 'dropdown-item',
+                  style: "background-color: #{label.background_color}" %>
+    <% end %>
+  </div>
+</div>

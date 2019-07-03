@@ -1,6 +1,9 @@
 <div class="card border-secondary mb-3" style="max-width: 18rem;" id='<%= post.id %>'>
   <div class="card-header">
     <%= post.title %>
+    <div class='float-right'>
+      <%= render partial: 'post_labels/form', locals: { post: post } %>
+    </div>
   </div>
   <div class="card-body text-secondary">
     <%= link_to t('boards.index.edit'), edit_board_post_path(post.board, post) %>
@@ -14,6 +17,7 @@
     <div>
       <%= render partial: 'posts/attachments', locals: { post: post, size: '100x100' } %>
     </div>
+    <%= render partial: 'post_labels/index', locals: { post: post } %>
     <p class="card-text float-right"><%= post.conclusion_deadline.strftime("%d/%m/%Y %H:%M") %></p>
   </div>
 </div>
