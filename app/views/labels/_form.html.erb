@@ -1,0 +1,19 @@
+<%= form_with model: [current_user, @label], class: 'form-horizontal', local: true do |f| %>
+  <div class='form-group'>
+    <%= f.label :title %>
+    <div class=''>
+      <%= f.text_field :title, required: true %>
+    </div>
+  </div>
+  <div class='form-group'>
+    <%= f.label :background_color %>
+    <div class=''>
+      <%= f.color_field :background_color %>
+    </div>
+  </div>
+  <div class='form-group'>
+    <div class=''>
+      <%= f.submit class: 'btn btn-success' %>
+    </div>
+  </div>
+<% end %>

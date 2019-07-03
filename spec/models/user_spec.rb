@@ -7,7 +7,8 @@ RSpec.describe User, type: :model do
   it { is_expected.to allow_value('').for(:name) }
   it { is_expected.to have_secure_password }
   it { is_expected.to have_many(:boards) }
-  it { is_expected.to have_many(:posts).through(:boards)}
+  it { is_expected.to have_many(:posts).through(:boards) }
+  it { is_expected.to have_many(:labels) }
 
   describe 'validations' do
     subject  { create(:user) }

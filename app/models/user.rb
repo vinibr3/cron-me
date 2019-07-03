@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_secure_password
 
   has_many :boards
+  has_many :labels
   has_many :posts, through: :boards
 
   validates :email, presence: true,
