@@ -1,9 +1,13 @@
 <ul id='post-labels' style='list-style: none;'>
   <% post_labels.each do |post_label| %>
-    <li>
-      <div class="alert text-center" role="alert" style='background-color:<%= post_label.label.background_color %>;'>
+    <li id='post-label-<%= post_label.id %>'>
+      <div class="alert text-center float-right" role="alert" style='background-color:<%= post_label.label.background_color %>;'>
         <%= post_label.label.title %>
-      </div>
+        <%= link_to 'x', post_label_path(post_label.post, post_label.label),
+                         method: :delete,
+                         remote: true,
+                         class: 'float-right',
+                         data: { confirm: t('posts.confirm_destroy') } %>
     </li>
   <% end %>
 </ul>

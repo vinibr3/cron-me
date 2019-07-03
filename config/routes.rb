@@ -11,8 +11,8 @@ Rails.application.routes.draw do
     resources :records, param: :id do
       resources :active_storage_attachments, only: [:destroy]
     end
-    resources :posts, shallow: true do
-      resources :labels, controller: :post_labels, only: [:create]
+    resources :posts, only: [] do
+      resources :labels, controller: :post_labels, only: [:create, :destroy]
     end
     root 'boards#index'
   end

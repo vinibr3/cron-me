@@ -8,6 +8,13 @@ class PostLabelsController < ApplicationController
     end
   end
 
+  def destroy
+    @post_label = @post.label_posts.where(label_id: params[:id]).first
+    respond_to do |format|
+      format.js { @post_label.destroy }
+    end
+  end
+
   private
 
   def valid_params
