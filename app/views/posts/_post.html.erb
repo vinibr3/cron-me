@@ -3,14 +3,17 @@
     <%= post.title %>
   </div>
   <div class="card-body text-secondary">
-    <h5 class='card-title'> <%= link_to t('posts.edit'), edit_board_post_path(post.board, post) %>
+    <%= link_to t('boards.index.edit'), edit_board_post_path(post.board, post) %>
     <%= link_to t('posts.destroy'),
                 board_post_path(post.board, post),
                 method: :delete,
                 remote: true,
-                data: { confirm: t('posts.confirm_destroy') } %>
-    </h5>
+                data: { confirm: t('posts.confirm_destroy') },
+                class: 'float-right' %>
     <h5 class="card-title"><%= post.description %></h5>
+    <div>
+      <%= render partial: 'posts/attachments', locals: { post: post, size: '100x100' } %>
+    </div>
     <p class="card-text float-right"><%= post.conclusion_deadline.strftime("%d/%m/%Y %H:%M") %></p>
   </div>
 </div>

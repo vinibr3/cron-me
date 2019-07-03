@@ -24,8 +24,10 @@
     </ul>
     <ul class="nav justify-content-end">
       <% if signed_in? %>
-        <li class="nav-item active">
-          <%= link_to current_user.email, edit_user_path(current_user)  %>
+        <li class="nav-item active" style='margin: 4px 10px;'>
+          <%= link_to edit_user_path(current_user)  do %>
+            <%= render partial: 'users/avatar', locals: { size: '40x30' } if signed_in? %>
+          <% end %>
         </li>
         <li class="nav-item">
           <%= link_to t('sessions.destroy.exit'),

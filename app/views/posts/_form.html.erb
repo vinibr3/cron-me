@@ -11,10 +11,18 @@
       <%= f.text_area :description %>
     </div>
   </div>
-  <div class=form-group''>
+  <div class=form-group'>
     <%= f.label :conslusion_deadline %>
     <div class=''>
       <%= f.date_field :conclusion_deadline %>
+    </div>
+  </div>
+  <div class=form-group''>
+    <%= render partial: 'posts/attachments', locals: { post: f.object, size: '100x100' } %>
+  </div>
+  <div class=form-group''>
+    <div class=''>
+      <%= f.file_field :attachments, multiple: true %>
     </div>
   </div>
   <div class='form-group'>
