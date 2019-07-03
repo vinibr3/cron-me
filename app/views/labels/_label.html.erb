@@ -1,0 +1,11 @@
+<div class="alert text-center" role="alert" style='background-color:<%= label.background_color %>;'>
+  <%= label.title %>
+</div>
+<%= link_to t('boards.index.edit'),
+            edit_user_label_path(current_user, label) %>
+<%= link_to t('boards.index.destroy'),
+            user_label_path(current_user, label),
+            method: :delete,
+            remote: true,
+            data: { confirm: t('posts.confirm_destroy') },
+            class: 'float-right' %>
