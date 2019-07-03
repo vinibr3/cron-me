@@ -1,0 +1,9 @@
+<ul id='post-labels' style='list-style: none;'>
+  <% post_labels.each do |post_label| %>
+    <li>
+      <div class="alert text-center" role="alert" style='background-color:<%= post_label.label.background_color %>;'>
+        <%= post_label.label.title %>
+      </div>
+    </li>
+  <% end %>
+</ul>
