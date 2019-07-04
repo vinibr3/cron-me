@@ -1,0 +1,5 @@
+<ul id='post-<%= post.id %>' style='list-style: none;'>
+  <% post.label_posts.each do |post_label| %>
+    <%= render partial: 'post_labels/post_label', locals: { post_label: post_label } %>
+  <% end %>
+</ul>

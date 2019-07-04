@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :require_login
   before_action :find_board
   before_action :find_post_from_board, only: [:edit, :update, :destroy]
 
@@ -43,7 +44,7 @@ class PostsController < ApplicationController
   end
 
   def valid_params
-    params.require(:post).permit(:title, :description, :conclusion_deadline, :conclusion_date, :board_id)
+    params.require(:post).permit(:title, :description, :conclusion_deadline, :conclusion_date, :board_id, attachments: [])
   end
 
   def find_post_from_board

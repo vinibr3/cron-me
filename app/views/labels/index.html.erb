@@ -1,0 +1,19 @@
+<div class='container-fluid'>
+  <div class='row'>
+    <div class='col'></div>
+    <div class='col-4'>
+      <h2><%= t('activerecord.models.label', count: 2) %></h2>
+      <ul class='list-group'>
+        <% @labels.each do |label| %>
+          <li class='list-group-item' id='label-<%= label.id %>'>
+            <%= render label %>
+          </li>
+        <% end %>
+      </ul><br/>
+      <span class='float'> <%= link_to t('labels.new.title'),
+                                       new_user_label_path(current_user),
+                                       class: 'btn btn-primary float-right' %> </span>
+    </div>
+    <div class='col'></div>
+  </div>
+</div>
