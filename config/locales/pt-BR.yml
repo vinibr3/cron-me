@@ -35,6 +35,7 @@ pt-BR:
         description: Descricao
         conslusion_deadline: Data Para Conclusao
         conslusion_date: Data de Conclusao
+        board: Painel
       label:
         title: Titulo
         background_color: Cor
