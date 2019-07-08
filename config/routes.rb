@@ -14,12 +14,13 @@ Rails.application.routes.draw do
     resources :posts, only: [] do
       resources :labels, controller: :post_labels, only: [:create, :destroy]
     end
-    root 'boards#index'
-  end
 
-  namespace :api do
-    resources :boards, only: [] do
-      resources :posts, only: [:create]
+    namespace :api do
+      resources :boards, only: [] do
+        resources :posts, only: [:create]
+      end
     end
+
+    root 'boards#index'
   end
 end
