@@ -16,4 +16,10 @@ Rails.application.routes.draw do
     end
     root 'boards#index'
   end
+
+  namespace :api do
+    resources :boards, only: [] do
+      resources :posts, only: [:create]
+    end
+  end
 end
